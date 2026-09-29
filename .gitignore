@@ -1,0 +1,9 @@
+# Documenti con dati personali/bancari o interni: NON versionare (il repo può essere pubblico su GitHub Pages)
+Fondazione/20251205-ModuloRichiesta-*.pdf
+Fondazione/m0_note_operative_per_i_beneficiari*.pdf
+
+# Metadati di sistema
+._*
+.DS_Store
+Thumbs.db
+desktop.ini
