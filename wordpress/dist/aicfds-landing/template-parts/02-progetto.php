@@ -1,0 +1,59 @@
+<?php
+/**
+ * Sezione: Progetto
+ * Generato da src/sections/02-progetto.html con wordpress/build.py.
+ *
+ * @package aicfds-landing
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+<section class="aicfds-section" id="progetto" aria-labelledby="progetto-title">
+  <div class="aicfds-container">
+    <div class="aicfds-split">
+      <div class="aicfds-split__main">
+        <p class="aicfds-eyebrow">Il progetto</p>
+        <h2 id="progetto-title">Una rete per non affrontare la celiachia da soli</h2>
+        <p class="aicfds-lead">
+          Iniziativa interregionale promossa da <strong>AIC Sardegna</strong> (come capofila),
+          <strong>AIC Piemonte</strong>, <strong>AIC Sicilia</strong> e <strong>AIC Calabria</strong>, realizzata
+          con il contributo della <strong>Fondazione di Sardegna</strong> nell'ambito del Bando annuale 2026
+          “Salute pubblica, medicina preventiva e riabilitativa”.
+        </p>
+        <p>
+          Un progetto che nasce per rispondere a un bisogno concreto: il supporto per tutti i celiaci, ad iniziare dalla diagnosi dove
+          ansia isolamento e difficoltà pratiche nella gestione della dieta senza glutine sono più frequenti,
+          per continuare poi nelle scuole dove docenti e personale non sempre dispongono di strumenti adeguati per gestire le esigenze alimentari speciali.
+          Il progetto mira a definire degli standard comuni tra le quattro regioni, valorizzando le buone pratiche già esistenti e costruendo una rete stabile, replicabile e orientata alla prevenzione
+        </p>
+        <p>
+          Le attività si svolgono in gran parte online, per raggiungere anche le zone interne e periferiche,
+          ridurre gli spostamenti e mettere in contatto persone e territori diversi.
+        </p>
+      </div>
+
+      <div class="aicfds-split__aside">
+        <h3 class="aicfds-h-small">Gli obiettivi</h3>
+        <ul class="aicfds-check-list">
+          <li>Promuovere l'educazione sanitaria su celiachia, allergie, intolleranze ed esigenze etiche o religiose.</li>
+          <li>Fornire a docenti, famiglie e studenti strumenti pratici per ridurre errori e rischi di contaminazione.</li>
+          <li>Aumentare autonomia e sicurezza nella vita quotidiana con supporto nutrizionale e corsi di cucina.</li>
+          <li>Ridurre ansia e isolamento dei neodiagnosticati attraverso il confronto con professionisti.</li>
+          <li>Rafforzare una rete interregionale stabile tra Sardegna, Piemonte, Sicilia e Calabria.</li>
+          <li>Realizzare attività online capillari, sostenibili e replicabili oltre la durata del progetto.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="aicfds-stats" aria-labelledby="stats-title">
+      <h3 id="stats-title" class="aicfds-stats__title">Il progetto in numeri <span>obiettivi previsti</span></h3>
+      <ul class="aicfds-stats__list">
+        <li><strong>4</strong><span>associazioni regionali in rete</span></li>
+        <li><strong>8+</strong><span>istituti scolastici coinvolti, 2 per regione</span></li>
+        <li><strong>8</strong><span>incontri Q&amp;A con dietista e psicologa</span></li>
+        <li><strong>4</strong><span>dirette stagionali con le nutrizioniste</span></li>
+        <li><strong>1.000+</strong><span>partecipanti alle attività online</span></li>
+      </ul>
+    </div>
+  </div>
+</section>

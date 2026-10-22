@@ -206,15 +206,16 @@ Per ogni progetto: descrizione testuale, eventuali immagini/grafiche, link ai si
   di pubblicare o modificare contenuti live.
 
 ### Strategia (in ordine di preferenza)
-1. **Elementor nativo (principale)** — pagina costruita con Flexbox Container e widget standard
-   (Heading, Text Editor, Image, Button, Icon List, eventuale Nav Menu/ancore), stili via classi/variabili
-   globali (rosso AIC, grigi, spaziature) così che il cliente possa poi modificare i testi in autonomia.
-   Template di pagina "Elementor Canvas" o "Full Width" a seconda di header/footer del sito da mantenere.
-2. **Elementor + HTML/CSS custom** — per blocchi particolari (es. timeline, card progetti) usare widget HTML
-   o CSS personalizzato della pagina, mantenendo il CSS con prefisso dedicato (es. `.aicfds-`) per non
-   interferire con il tema.
-3. **Template PHP nel child theme (riserva)** — solo se si ottiene accesso ai file del tema: file
-   `page-progetto-fondazione.php` + CSS/JS enqueued. Da considerare se Elementor risultasse limitante.
+Decisione del 22/10/2026: si passa al **template di pagina PHP** (opzione 1), mantenendo in vita la versione a
+widget HTML di Elementor (opzione 2). Entrambe derivano dagli stessi sorgenti in `src/`.
+1. **Template di pagina WordPress in PHP, consegnato come plugin** (`wordpress/`) — modello
+   «Progetto Fondazione di Sardegna» con `get_header()` / `get_footer()`: header e footer sono quelli del sito
+   (modelli Elementor Pro del Theme Builder richiamati dal tema Hello-derivato `AIC-territoriale-master`).
+   Il tema condiviso non si modifica. Richiede di poter installare un plugin (o copiare file in `assets/plugins/`).
+2. **Elementor, widget HTML** (`elementor/`) — una sezione per widget HTML + CSS nel CSS personalizzato della
+   pagina; non richiede accesso ai file. Utile se non si può installare il plugin.
+3. **Elementor nativo** — ricostruire la pagina con widget standard (Heading, Text Editor, Image, Button…):
+   massima modificabilità da parte del cliente, ma da rifare da zero. Solo se richiesto.
 
 ### Prototipo nel repository (`docs/`, pubblicato con GitHub Pages)
 - Prototipo statico in **`docs/`** (GitHub Pages: branch `main`, cartella `/docs`), usato per validare
@@ -229,6 +230,47 @@ Per ogni progetto: descrizione testuale, eventuali immagini/grafiche, link ai si
   FdS non hanno lo sfondo nero incorporato.
 - Nel passaggio a Elementor, i token del CSS diventano colori/tipografie globali del kit; le classi
   personalizzate vanno prefissate (es. `.aicfds-`) per non entrare in conflitto con il tema.
+
+### Sorgenti comuni (`src/`) e due versioni di consegna
+- `src/sections/NN-nome.html`: una sezione per file (hero, progetto, indice, 4 progetti, evento finale,
+  associazioni, loghi/dicitura). Classi con prefisso `aicfds-`, ogni file racchiuso in `<div class="aicfds">`
+  per isolarsi dal tema. Immagini come segnaposto `{{chiave}}` (aic-sardegna, aic-piemonte, aic-sicilia,
+  aic-calabria, fondazione-sardegna, calendario).
+- `src/css/aicfds.css` (tutto sotto `.aicfds`, nessun `@font-face`: il font Asap è già sul sito) e
+  `src/js/aicfds.js` (solo badge «Svolto / In programma» da `data-date`).
+- Niente header/footer/menu propri: usa quelli del sito. Se si modifica il prototipo in `docs/`, riportare la
+  modifica in `src/`.
+
+### Versione PHP / plugin (`wordpress/`)
+- `python wordpress/build.py` → `wordpress/dist/aicfds-landing/` + `aicfds-landing.zip`. Le sezioni diventano
+  `template-parts/*.php` (un solo `<main id="content" class="aicfds">` nel template; `id="content"` serve al
+  link «salta al contenuto» del tema); loghi e immagini sono inclusi nel plugin (calendario in WebP) e referenziati
+  con `aicfds_asset()`.
+- Il plugin registra il modello con `theme_page_templates`, lo carica con `template_include` (priorità 99, per
+  battere il Theme Builder di Elementor Pro) e accoda CSS/JS solo sulle pagine che lo usano.
+- Verificato solo con simulatore (lint PHP + render con header/footer reali del sito): **va provato su una
+  pagina in bozza di WordPress**. Istruzioni e controlli in `wordpress/README.md`.
+- Nota sul sito: la cartella `wp-content` si chiama `assets` (`/assets/plugins`, `/assets/uploads`, `/assets/themes`).
+
+### Larghezza disponibile e layout a container query
+- Nel sito la pagina vive nella colonna centrale del tema (`#aic-main-content`: sidebar a sinistra, contenuto di **max 822px**,
+  padding 30px). Il CSS usa quindi **container query** (`.aicfds { container: aicfds / inline-size }`,
+  `@container aicfds (...)`, unità `cqw`) invece di media query: l'assetto dipende dalla larghezza della colonna.
+  A 822px si ottiene il layout «tablet» (colonna singola, hero con loghi in orizzontale, pannelli su due colonne).
+- Le variabili che cambiano con la larghezza (`--gutter`, `--space-section`) stanno su `.aicfds > *` (la sezione):
+  le container query non possono modificare il contenitore stesso.
+- Il tema ha `#aic-main-content ul li:before { content:"•" … }` (selettore con ID): il CSS lo azzera con `!important`.
+- Il tema stampa già l'`<h1>` della pagina: nella versione Elementor il titolo dell'hero è `<h2>` (trasformazione in
+  `elementor/build.py`); nella versione PHP resta `<h1>`.
+- I widget vanno in un contenitore verticale a larghezza piena (un contenitore in riga con larghezza automatica
+  li farebbe collassare: `inline-size` containment).
+
+### Versione Elementor, widget HTML (`elementor/`)
+- 10 widget HTML (+1 di script) in un solo Container a larghezza piena; CSS nel *CSS personalizzato* della pagina
+  (Elementor Pro). Istruzioni in `elementor/README.md`.
+- Le immagini stanno nella Libreria media di sardegna.celiachia.it (`/assets/uploads/2026/...`); gli URL sono in
+  `elementor/urls.json` e `python elementor/build.py` li inserisce generando `elementor/dist/` (da incollare).
+  `--preview` crea una pagina di prova con i CSS reali del sito.
 
 ### Requisiti tecnici trasversali
 - Breakpoint del prototipo: mobile ≤ 639 (≤ 359 per schermi molto stretti), tablet 640–991 (colonne laterali
@@ -290,7 +332,9 @@ Entrambi sono esclusi dal versionamento in `.gitignore`: il repository può esse
 - [ ] Immagini/foto dei progetti con relative liberatorie (in particolare foto di minori nelle scuole).
 - [ ] Testi definitivi per hero e introduzione (o approvazione di testi redatti da noi sulla base dei documenti).
 - [ ] Accessi: WordPress (utente con ruolo idoneo a Elementor), eventuale hosting; versione Elementor e tema.
-- [ ] Decidere se mantenere header/footer del sito sardegna.celiachia.it o usare un layout canvas dedicato.
+- [x] Header/footer: si usano quelli del sito (deciso 22/10/2026).
+- [ ] Prova del plugin su una pagina in bozza dell'installazione reale (modello Single di Elementor Pro, header sticky, WP Rocket).
+- [ ] Versione Elementor widget: l'immagine del calendario in Libreria media è il PNG da 1,2 MB; valutare il WebP (124 KB, già usato dal plugin).
 
 ---
 

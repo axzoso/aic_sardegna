@@ -1,0 +1,59 @@
+<?php
+/**
+ * Sezione: Dirette
+ * Generato da src/sections/07-dirette.html con wordpress/build.py.
+ *
+ * @package aicfds-landing
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+<section class="aicfds-project aicfds-project--alt" id="dirette" aria-labelledby="p4-title">
+  <div class="aicfds-container">
+    <header class="aicfds-project__head">
+      <span class="aicfds-project__num" aria-hidden="true">04</span>
+      <div>
+        <h2 id="p4-title">Dirette con le nutrizioniste</h2>
+        <ul class="aicfds-tags" aria-label="Associazioni coinvolte">
+          <li>Calabria</li><li>Aperte a tutti</li>
+        </ul>
+      </div>
+    </header>
+
+    <p class="aicfds-lead aicfds-lead--narrow">
+      Quattro dirette Instagram, una per ogni stagione, in cui le nutrizioniste parlano di educazione
+      alimentare,suggeriscono menù in base alla stagionalità dei prodotti e spiegano come prevenire le carenze e gestire le occasioni di socialità.
+    </p>
+
+    <ol class="aicfds-seasons">
+      <li class="aicfds-event aicfds-season aicfds-season--autumn" data-date="2025-10-23">
+        <p class="aicfds-season__name">Autunno</p>
+        <time datetime="2025-10-23">23 ottobre 2025</time>
+        <p class="aicfds-event__title">Alimentazione per celiachia: i consigli autunnali delle nutrizioniste</p>
+      </li>
+      <li class="aicfds-event aicfds-season aicfds-season--winter" data-date="2026-02-18">
+        <p class="aicfds-season__name">Inverno</p>
+        <time datetime="2026-02-18">18 febbraio 2026</time>
+        <p class="aicfds-event__title">4 stagioni, 0 glutine: Piacere e benessere a tavola – Edizione inverno</p>
+      </li>
+      <li class="aicfds-event aicfds-season aicfds-season--spring" data-date="2026-06-04">
+        <p class="aicfds-season__name">Primavera</p>
+        <time datetime="2026-06-04">4 giugno 2026</time>
+        <p class="aicfds-event__title">4 stagioni, 0 glutine: Piacere e benessere a tavola</p>
+      </li>
+      <li class="aicfds-event aicfds-season aicfds-season--summer" data-date="2026-07-13">
+        <p class="aicfds-season__name">Estate</p>
+        <time datetime="2026-07-13">13 luglio 2026</time>
+        <p class="aicfds-event__title">4 stagioni, 0 glutine: Piacere e benessere a tavola</p>
+      </li>
+    </ol>
+
+    <p class="aicfds-center">
+      <a class="aicfds-link-ext" href="https://calabria.celiachia.it/" target="_blank" rel="noopener">
+        Segui le attività di AIC Calabria<span class="aicfds-visually-hidden"> (si apre in una nuova scheda)</span>
+        <svg class="aicfds-icon-ext" aria-hidden="true" viewBox="0 0 16 16"><path d="M6 3h7v7M13 3 5.5 10.5M11 9.5V13H3V5h3.5"/></svg>
+      </a>
+      <span class="aicfds-tbc">link a profilo o registrazioni da confermare</span>
+    </p>
+  </div>
+</section>

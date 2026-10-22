@@ -1,0 +1,53 @@
+<?php
+/**
+ * Sezione: Indice attivita
+ * Generato da src/sections/03-indice-attivita.html con wordpress/build.py.
+ *
+ * @package aicfds-landing
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+<section class="aicfds-section aicfds-section--soft" id="progetti" aria-labelledby="progetti-title">
+  <div class="aicfds-container">
+    <header class="aicfds-section-head">
+      <p class="aicfds-eyebrow">Le attività</p>
+      <h2 id="progetti-title">Quattro progetti, un'unica rete</h2>
+      <p class="aicfds-lead">
+        Scuola, supporto psicologico e corsi di cucina: le attività del progetto sono aperte alle
+        persone celiache e alle loro famiglie in tutte e quattro le regioni.
+      </p>
+    </header>
+
+    <ol class="aicfds-project-index">
+      <li>
+        <a href="#in-fuga-dal-glutine">
+          <span class="aicfds-project-index__num" aria-hidden="true">01</span>
+          <span class="aicfds-project-index__title">In fuga dal glutine</span>
+          <span class="aicfds-project-index__desc">Percorso inclusivo per scuole dell'infanzia e primarie</span>
+        </a>
+      </li>
+      <li>
+        <a href="#qa">
+          <span class="aicfds-project-index__num" aria-hidden="true">02</span>
+          <span class="aicfds-project-index__title">Q&amp;A con dietista e psicologa</span>
+          <span class="aicfds-project-index__desc">Incontri online per celiaci e familiari</span>
+        </a>
+      </li>
+      <li>
+        <a href="#corsi-cucina">
+          <span class="aicfds-project-index__num" aria-hidden="true">03</span>
+          <span class="aicfds-project-index__title">Corsi di cucina senza glutine</span>
+          <span class="aicfds-project-index__desc">Lezioni online con chef e food blogger</span>
+        </a>
+      </li>
+      <li>
+        <a href="#dirette">
+          <span class="aicfds-project-index__num" aria-hidden="true">04</span>
+          <span class="aicfds-project-index__title">Dirette con le nutrizioniste</span>
+          <span class="aicfds-project-index__desc">Un appuntamento per ogni stagione</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+</section>

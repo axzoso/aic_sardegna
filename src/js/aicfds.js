@@ -1,0 +1,19 @@
+/* AIC × Fondazione di Sardegna — landing page.
+   Unico comportamento: badge "Svolto" / "In programma" sugli appuntamenti, calcolato dalla data odierna
+   (attributo data-date="AAAA-MM-GG"). Senza JavaScript la pagina resta completa. */
+(function () {
+  "use strict";
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  Array.prototype.forEach.call(document.querySelectorAll(".aicfds .aicfds-event[data-date]"), function (el) {
+    if (el.querySelector(".aicfds-event__status")) return;
+    var p = el.getAttribute("data-date").split("-");
+    var past = new Date(+p[0], +p[1] - 1, +p[2]) < today;
+    el.classList.add(past ? "aicfds-is-past" : "aicfds-is-upcoming");
+    var badge = document.createElement("span");
+    badge.className = "aicfds-event__status";
+    badge.textContent = past ? "Svolto" : "In programma";
+    (el.querySelector(".aicfds-event__body") || el).appendChild(badge);
+  });
+})();

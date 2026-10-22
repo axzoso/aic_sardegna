@@ -1,0 +1,85 @@
+<?php
+/**
+ * Sezione: In fuga dal glutine
+ * Generato da src/sections/04-in-fuga-dal-glutine.html con wordpress/build.py.
+ *
+ * @package aicfds-landing
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+<section class="aicfds-project" id="in-fuga-dal-glutine" aria-labelledby="p1-title">
+  <div class="aicfds-container">
+    <header class="aicfds-project__head">
+      <span class="aicfds-project__num" aria-hidden="true">01</span>
+      <div>
+        <h2 id="p1-title">In fuga dal glutine</h2>
+        <ul class="aicfds-tags" aria-label="Associazioni coinvolte">
+          <li>Sardegna</li><li>Piemonte</li><li>Sicilia</li><li>Calabria</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="aicfds-split">
+      <div class="aicfds-split__main">
+        <p class="aicfds-lead">
+          Un percorso scolastico inclusivo che, attraverso una metodologia ludica, parla ad alunni e insegnanti
+          di celiachia, allergie, intolleranze e scelte etiche o religiose, e più in generale di
+          <strong>educazione alla diversità come risorsa e ricchezza</strong>.
+        </p>
+        <p>
+          AIC offre agli insegnanti delle scuole dell'infanzia e primarie materiali didattici uniformati tra le
+          quattro regioni, linee guida per la sicurezza in mensa e strumenti per l'inclusione degli studenti con
+          esigenze alimentari speciali. La formazione dei docenti si svolge online e in presenza.
+        </p>
+        <p>
+          L'approccio è quello del “bicchiere mezzo pieno”: non ciò che chi è celiaco non può fare, ma tutto
+          ciò che di bello può vivere, anche a tavola, in un contesto di vera condivisione.
+        </p>
+
+        <h3 class="aicfds-h-small">Cosa impareranno gli alunni</h3>
+        <ul class="aicfds-check-list">
+          <li>Riflettere in modo critico sulla diversità di ciascuno nel modo di alimentarsi.</li>
+          <li>Vedere la diversità come una risorsa per il benessere comune.</li>
+          <li>Conoscere le necessità alimentari della celiachia e di altre condizioni specifiche.</li>
+          <li>Coltivare comprensione, condivisione, partecipazione e solidarietà.</li>
+          <li>Sviluppare responsabilità individuale unendo divertimento e apprendimento.</li>
+        </ul>
+      </div>
+
+      <div class="aicfds-split__aside">
+        <div class="aicfds-panel aicfds-panel--schools">
+          <h3 class="aicfds-panel__title">Nelle scuole</h3>
+          <p class="aicfds-panel__meta">Anno scolastico 2025/2026</p>
+
+          <div class="aicfds-school">
+            <p class="aicfds-school__region">Calabria</p>
+            <h4 class="aicfds-school__name">IC “A. Pagano”</h4>
+            <p class="aicfds-school__place">Nicotera, Rombiolo, S. Calogero, Cessaniti, Pannaconi (VV)</p>
+            <ul class="aicfds-school__facts">
+              <li><strong>100</strong> docenti e personale formati online</li>
+              <li><strong>120</strong> alunni in 10 classi di infanzia e primaria</li>
+            </ul>
+            <p class="aicfds-school__total"><strong>220</strong> partecipanti</p>
+          </div>
+
+          <div class="aicfds-school">
+            <p class="aicfds-school__region">Calabria</p>
+            <h4 class="aicfds-school__name">IC Laureana–Galatro–Feroleto–Melicucco</h4>
+            <p class="aicfds-school__place">Laureana, Galatro, Feroleto, Melicucco</p>
+            <ul class="aicfds-school__facts">
+              <li><strong>60</strong> docenti e personale formati online</li>
+              <li><strong>60</strong> alunni in 3 classi di infanzia e secondaria</li>
+            </ul>
+            <p class="aicfds-school__total"><strong>120</strong> partecipanti</p>
+          </div>
+
+          <div class="aicfds-placeholder">
+            Scuole e dati di Sardegna, Piemonte e Sicilia
+            <span class="aicfds-tbc">da confermare</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
